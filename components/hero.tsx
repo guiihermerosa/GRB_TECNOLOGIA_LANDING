@@ -20,8 +20,8 @@ export default function HeroSection() {
           </p>
 
           <div className="hero-cta">
-            <a href="#pricing" className="button button--primary">
-              Ver planos
+            <a href="#contato" className="button button--primary">
+              Solicitar orçamento
               <ArrowRight size={18} />
             </a>
             <a href="#contato" className="button button--secondary">

@@ -4,7 +4,6 @@ import ContactForm from '@/components/contact-form';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero';
 import FeaturesSection from '@/components/features';
-import PricingSection from '@/components/pricing';
 import ScrollTopButton from '@/components/scroll-top';
 import WhatsAppFloat from '@/components/whatsapp-float';
 import ToastProvider from '@/components/toast-provider';
@@ -16,7 +15,6 @@ export default function HomePage() {
         <main>
           <HeroSection />
           <FeaturesSection />
-          <PricingSection />
           <section className="section section--contact" id="contato">
             <div className="layout-container">
               <div className="section-heading">
