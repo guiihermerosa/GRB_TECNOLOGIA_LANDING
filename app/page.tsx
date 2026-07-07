@@ -1,4 +1,5 @@
-import { AnimatePresence, motion } from 'framer-motion';
+'use client';
+
 import ContactForm from '@/components/contact-form';
 import Footer from '@/components/footer';
 import FaqSection from '@/components/faq';
@@ -15,17 +16,10 @@ export default function HomePage() {
   return (
     <ToastProvider>
       <div className="page-shell">
-        <AnimatePresence mode="wait">
-          <main className="layout-container">
-            <HeroSection />
-            <ServicesSection />
-            <motion.section
-              className="section section--contact"
-              id="contato"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
-            >
+        <main className="layout-container">
+          <HeroSection />
+          <ServicesSection />
+          <section className="section section--contact" id="contato">
               <div className="section__content grid--2">
                 <div>
                   <p className="eyebrow">Contato comercial</p>
@@ -42,8 +36,8 @@ export default function HomePage() {
                 </div>
                 <ContactForm />
               </div>
-            </motion.section>
-            <TestimonialsSection />
+          </section>
+          <TestimonialsSection />
             <PartnersSection />
             <FaqSection />
             <ChatWidget />
@@ -58,11 +52,10 @@ export default function HomePage() {
                 </a>
               </div>
             </section>
-          </main>
-          <Footer />
-          <WhatsAppFloat />
-          <ScrollTopButton />
-        </AnimatePresence>
+        </main>
+        <Footer />
+        <WhatsAppFloat />
+        <ScrollTopButton />
       </div>
     </ToastProvider>
   );

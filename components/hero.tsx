@@ -1,17 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 export default function HeroSection() {
   return (
     <section className="section section--hero" aria-label="Apresentação da GRB Tecnologia">
       <div className="layout-container">
-        <motion.div
-          initial={{ opacity: 0, y: 36 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="hero-panel"
-        >
+        <div className="hero-panel">
           <p className="eyebrow">GRB Tecnologia</p>
           <h1>Suporte técnico, telecomunicações e soluções de informática para quem busca atendimento premium.</h1>
           <p>
@@ -36,7 +29,7 @@ export default function HeroSection() {
               <p>Do comércio eletrônico à manutenção residencial e corporativa.</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

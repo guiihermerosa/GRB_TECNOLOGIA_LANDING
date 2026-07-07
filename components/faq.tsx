@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const faqs = [
   {
     question: 'Como solicito um orçamento para manutenção de computadores?',
@@ -28,18 +26,11 @@ export default function FaqSection() {
           <h2 id="faq-title">Dúvidas frequentes</h2>
         </div>
         <div className="faq-grid">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={faq.question}
-              className="card"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.07 }}
-            >
+          {faqs.map((faq) => (
+            <div key={faq.question} className="card">
               <h3>{faq.question}</h3>
               <p>{faq.answer}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

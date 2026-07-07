@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const partners = ['Grupo Empresarial', 'Instituto de Treinamento', 'Operadora Local', 'Lojista de Informática'];
 
 export default function PartnersSection() {
@@ -11,17 +9,10 @@ export default function PartnersSection() {
           <h2 id="parceiros-title">Parceiros e empresas atendidas</h2>
         </div>
         <div className="partner-grid">
-          {partners.map((name, index) => (
-            <motion.div
-              key={name}
-              className="partner-card"
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.35, delay: index * 0.05 }}
-            >
+          {partners.map((name) => (
+            <div key={name} className="partner-card">
               <strong>{name}</strong>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

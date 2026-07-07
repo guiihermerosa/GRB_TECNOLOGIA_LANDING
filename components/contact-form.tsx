@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import InputMask from 'react-input-mask';
 import { sendContactEmail } from '@/services/contact-client';
 import { isValidEmail, isValidPhone, sanitizeInput } from '@/utils/validators';

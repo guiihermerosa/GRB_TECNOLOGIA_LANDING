@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const testimonials = [
   {
     quote: 'Atendimento rápido, resolutivo e com excelente acompanhamento. Recomendo a GRB Tecnologia para qualquer necessidade de TI.',
@@ -24,18 +22,11 @@ export default function TestimonialsSection() {
           <h2 id="depoimentos-title">Clientes que encontraram mais eficiência com a GRB</h2>
         </div>
         <div className="testimonial-grid">
-          {testimonials.map((item, index) => (
-            <motion.article
-              key={item.author}
-              className="testimonial-card"
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-            >
+          {testimonials.map((item) => (
+            <article key={item.author} className="testimonial-card">
               <p>“{item.quote}”</p>
               <strong>{item.author}</strong>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

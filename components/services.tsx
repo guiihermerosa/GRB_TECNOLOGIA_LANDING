@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-
 const serviceEntries = [
   {
     title: 'Manutenção de computadores',
@@ -28,18 +26,11 @@ export default function ServicesSection() {
           <h2 id="servicos-title">Soluções completas para seu equipamento e seu negócio</h2>
         </div>
         <div className="service-grid">
-          {serviceEntries.map((service, index) => (
-            <motion.article
-              key={service.title}
-              className="service-card"
-              initial={{ opacity: 0, y: 26 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-            >
+          {serviceEntries.map((service) => (
+            <article key={service.title} className="service-card">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
