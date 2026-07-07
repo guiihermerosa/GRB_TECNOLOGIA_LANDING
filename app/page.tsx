@@ -2,56 +2,41 @@
 
 import ContactForm from '@/components/contact-form';
 import Footer from '@/components/footer';
-import FaqSection from '@/components/faq';
 import HeroSection from '@/components/hero';
-import PartnersSection from '@/components/partners';
+import FeaturesSection from '@/components/features';
+import StatsSection from '@/components/stats';
+import PricingSection from '@/components/pricing';
 import ScrollTopButton from '@/components/scroll-top';
-import ServicesSection from '@/components/services';
-import TestimonialsSection from '@/components/testimonials';
 import WhatsAppFloat from '@/components/whatsapp-float';
 import ToastProvider from '@/components/toast-provider';
-import ChatWidget from '@/components/chat-widget';
 
 export default function HomePage() {
   return (
     <ToastProvider>
       <div className="page-shell">
-        <main className="layout-container">
+        <main>
           <HeroSection />
-          <ServicesSection />
+          <StatsSection />
+          <FeaturesSection />
+          <PricingSection />
           <section className="section section--contact" id="contato">
+            <div className="layout-container">
+              <div className="section-heading">
+                <p className="eyebrow">Vamos começar</p>
+                <h2>Pronto para otimizar sua infraestrutura de TI?</h2>
+                <p>Entre em contato conosco e agende uma reunião gratuita com nossos especialistas</p>
+              </div>
               <div className="section__content grid--2">
                 <div>
-                  <p className="eyebrow">Contato comercial</p>
-                  <h2>Pronto para receber um atendimento técnico premium?</h2>
-                  <p>
-                    Envie sua demanda e receba uma proposta personalizada para manutenção, suporte,
-                    telecomunicações ou treinamento em informática.
-                  </p>
-                  <div className="contact-card">
-                    <p><strong>Telefone:</strong> (18) 3341-3450</p>
-                    <p><strong>Email:</strong> grbtecnologia.cm@gmail.com</p>
-                    <p><strong>Endereço:</strong> R. Vicente Marroni, 60, Casa B, Jardim Bela Vista, Cândido Mota - SP</p>
-                  </div>
+                  <h3>Conecte-se conosco</h3>
+                  <p><strong>Telefone:</strong> (18) 3341-3450</p>
+                  <p><strong>Email:</strong> grbtecnologia.cm@gmail.com</p>
+                  <p><strong>Localização:</strong> Cândido Mota, SP</p>
                 </div>
                 <ContactForm />
               </div>
+            </div>
           </section>
-          <TestimonialsSection />
-            <PartnersSection />
-            <FaqSection />
-            <ChatWidget />
-            <section className="section section--cta">
-              <div className="section__content cta-panel">
-                <div>
-                  <p className="eyebrow">GRB Tecnologia</p>
-                  <h2>Transforme sua infraestrutura com suporte confiável e atendimento rápido.</h2>
-                </div>
-                <a className="button button--primary" href="#form-contato">
-                  Fale conosco agora
-                </a>
-              </div>
-            </section>
         </main>
         <Footer />
         <WhatsAppFloat />
