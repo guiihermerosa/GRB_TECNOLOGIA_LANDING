@@ -4,7 +4,6 @@ import ContactForm from '@/components/contact-form';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero';
 import FeaturesSection from '@/components/features';
-import StatsSection from '@/components/stats';
 import PricingSection from '@/components/pricing';
 import ScrollTopButton from '@/components/scroll-top';
 import WhatsAppFloat from '@/components/whatsapp-float';
@@ -16,15 +15,14 @@ export default function HomePage() {
       <div className="page-shell">
         <main>
           <HeroSection />
-          <StatsSection />
           <FeaturesSection />
           <PricingSection />
           <section className="section section--contact" id="contato">
             <div className="layout-container">
               <div className="section-heading">
                 <p className="eyebrow">Vamos começar</p>
-                <h2>Pronto para otimizar sua infraestrutura de TI?</h2>
-                <p>Entre em contato conosco e agende uma reunião gratuita com nossos especialistas</p>
+                <h2>Transforme sua infraestrutura de TI agora</h2>
+                <p>Entre em contato conosco para uma conversa sem compromissos com nossos especialistas</p>
               </div>
               <div className="section__content grid--2">
                 <div>
