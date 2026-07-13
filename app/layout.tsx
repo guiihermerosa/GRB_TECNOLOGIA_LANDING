@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+import './globals.css';
 
 const schema = {
   '@context': 'https://schema.org',
@@ -19,15 +17,13 @@ const schema = {
       availableLanguage: ['Português']
     }
   ],
-  sameAs: [
-    'https://www.linkedin.com/',
-    'https://www.facebook.com/'
-  ]
+  sameAs: ['https://www.linkedin.com/', 'https://www.facebook.com/']
 };
 
 export const metadata: Metadata = {
   title: 'GRB Tecnologia | Soluções em TI, Telecom e Informática',
-  description: 'GRB Tecnologia oferece suporte técnico, manutenção de computadores, telecomunicações e soluções em informática com foco em atendimento premium e geração de leads.',
+  description:
+    'GRB Tecnologia oferece suporte técnico, manutenção de computadores, telecomunicações e soluções em informática com foco em atendimento premium e geração de leads.',
   metadataBase: new URL('https://grbtecnologia.com.br'),
   alternates: {
     canonical: 'https://grbtecnologia.com.br'
@@ -69,12 +65,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans bg-slate-950 text-slate-50`}>
+      <body className="bg-background font-sans text-foreground">
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       </body>
     </html>
   );

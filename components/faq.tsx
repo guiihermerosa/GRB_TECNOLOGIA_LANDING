@@ -1,3 +1,6 @@
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 const faqs = [
   {
     question: 'Como solicito um orçamento para manutenção de computadores?',
@@ -19,18 +22,27 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section className="section section--faq" id="faq" aria-labelledby="faq-title">
-      <div className="layout-container">
-        <div className="section-heading">
-          <p className="eyebrow">FAQ</p>
-          <h2 id="faq-title">Dúvidas frequentes</h2>
+    <section className="px-4 py-20 sm:px-6 lg:px-8" id="faq" aria-labelledby="faq-title">
+      <div className="mx-auto grid w-full max-w-7xl gap-10">
+        <div className="mx-auto grid max-w-3xl justify-items-center gap-4 text-center">
+          <Badge variant="outline" className="border-white/10 bg-white/5 text-white">
+            FAQ
+          </Badge>
+          <h2 id="faq-title" className="text-balance text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+            Dúvidas frequentes
+          </h2>
         </div>
-        <div className="faq-grid">
+
+        <div className="grid gap-4 md:grid-cols-2">
           {faqs.map((faq) => (
-            <div key={faq.question} className="card">
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
+            <Card key={faq.question} className="border-white/10 bg-slate-950/70 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="text-xl text-white">{faq.question}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-400">{faq.answer}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,3 +1,6 @@
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+
 const testimonials = [
   {
     quote: 'Atendimento rápido, resolutivo e com excelente acompanhamento. Recomendo a GRB Tecnologia para qualquer necessidade de TI.',
@@ -15,18 +18,25 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="section section--testimonials" id="depoimentos" aria-labelledby="depoimentos-title">
-      <div className="layout-container">
-        <div className="section-heading">
-          <p className="eyebrow">Depoimentos</p>
-          <h2 id="depoimentos-title">Clientes que encontraram mais eficiência com a GRB</h2>
+    <section className="px-4 py-20 sm:px-6 lg:px-8" id="depoimentos" aria-labelledby="depoimentos-title">
+      <div className="mx-auto grid w-full max-w-7xl gap-10">
+        <div className="mx-auto grid max-w-3xl justify-items-center gap-4 text-center">
+          <Badge variant="outline" className="border-white/10 bg-white/5 text-white">
+            Depoimentos
+          </Badge>
+          <h2 id="depoimentos-title" className="text-balance text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+            Clientes que encontraram mais eficiência com a GRB
+          </h2>
         </div>
-        <div className="testimonial-grid">
+
+        <div className="grid gap-4 md:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.author} className="testimonial-card">
-              <p>“{item.quote}”</p>
-              <strong>{item.author}</strong>
-            </article>
+            <Card key={item.author} className="border-white/10 bg-slate-950/70 backdrop-blur">
+              <CardContent className="grid gap-4 p-6">
+                <p className="text-slate-300">“{item.quote}”</p>
+                <strong className="text-white">{item.author}</strong>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

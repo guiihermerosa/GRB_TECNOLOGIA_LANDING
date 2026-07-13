@@ -40,19 +40,25 @@ export default function ToastProvider({ children }: { children: React.ReactNode 
   return (
     <ToastContext.Provider value={value}>
       {children}
-      <div className="toast-stack" aria-live="polite" aria-atomic="true">
+      <div className="fixed right-4 top-4 z-[70] grid gap-3">
         <AnimatePresence initial={false}>
           {toasts.map((toast) => (
             <motion.div
               key={toast.id}
-              className={`toast toast--${toast.variant}`}
-              initial={{ opacity: 0, y: 24 }}
+              className={[
+                'w-[min(24rem,calc(100vw-2rem))] rounded-xl border bg-slate-950/95 p-4 shadow-xl shadow-black/30 backdrop-blur',
+                toast.variant === 'success' ? 'border-emerald-400/40' : '',
+                toast.variant === 'error' ? 'border-rose-400/40' : '',
+                toast.variant === 'warning' ? 'border-amber-400/40' : '',
+                toast.variant === 'info' ? 'border-cyan-400/40' : ''
+              ].join(' ')}
+              initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 24 }}
-              transition={{ duration: 0.25 }}
+              exit={{ opacity: 0, y: 18 }}
+              transition={{ duration: 0.22 }}
             >
-              <strong>{toast.title}</strong>
-              <p>{toast.message}</p>
+              <strong className="block text-sm font-semibold text-white">{toast.title}</strong>
+              <p className="mt-1 text-sm text-slate-300">{toast.message}</p>
             </motion.div>
           ))}
         </AnimatePresence>
